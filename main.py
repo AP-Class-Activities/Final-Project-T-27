@@ -1,7 +1,7 @@
-temp = 2
+t = 2
 n=int(input())
 while n > 1:
-    while n % temp == 0:
-        n /= temp
-    temp = temp + 1
-print(temp)
+    while n % t == 0:
+        n /= t
+    t = t + 1
+print(t)
