@@ -1,0 +1,18 @@
+from random import randint
+
+class Product:
+    def __init__(self,id,name,price,number) :
+        self.id=id,
+        self.name=name
+        self.price=price,
+        self.number=number
+        self.commentList=[]
+
+    
+class DiscountCode:
+    def __init__(self,name,expirationTime,idCustomers,number,idProducts):
+        self.name=name
+        self.expirationTime=expirationTime
+        self.idCustomers=idCustomers
+        self.number=number
+        self.idProducts=idProducts
