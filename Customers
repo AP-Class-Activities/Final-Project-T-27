@@ -1,0 +1,60 @@
+class Customer:
+    wallet =0.0
+    shoppingList=[]
+    favoriteProducts=[]
+    purchaseAmount=0.0
+
+    def __init__(self,id,name,password,distance) :
+        self.id = id
+        self._name=name
+        self._password=password
+        self.distance=distance
+        self.timeToReceiveProduct=distance * 5 / 60
+        
+    def get_name(self):
+        return self._name
+    def set_name(self,newName):
+        self._name=newName
+    
+    def get_password(self):
+        return self._password
+    def set_password(self,newPas):
+        self._password=newPas
+
+    name=property(get_name,set_name)   
+    password=property(get_password,set_password)   
+
+
+    def seeProduct(self,product):
+        print('id:{} name:{} price:{} number:{} '
+        .format(product.id,product.name,product.price,product.number))
+    
+    def seeProducts(self,products):
+        for product in products:
+            print('id:{} name:{} price:{} number:{} '
+            .format(product.id,product.name,product.price,product.number))
+    
+    def seeComents(self,product):
+        for i in product.commentList:
+            print(i)
+    def addComment(self,product,comment):
+        product.commentList.append(comment)
+           
+    def buyProduct(self,product,incInventory):
+        self.wallet=incInventory    
+       
+        if self.wallet>product.price:
+            self.addToShoppingList(product)
+            print('success')
+        else:
+            print('failed')
+    
+    def addToShoppingList(self,product):
+        self.shoppingList.append(product)
+    def addToFavoriteList(self,product):
+        self.favoriteProducts.append(product)
+
+    def seeShoppingList(self):
+        for product in self.shoppingList:
+            print('id:{} name:{} price:{} number:{} '
+            .format(product.id,product.name,product.price,product.number))
