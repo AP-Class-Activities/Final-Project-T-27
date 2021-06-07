@@ -43,11 +43,11 @@ class Customer:
     def buyProduct(self,product,incInventory):
         self.wallet=incInventory    
        
-        if self.wallet>product.price:
+        if self.wallet >= product.price:
             self.addToShoppingList(product)
-            print('success')
+            return('success')
         else:
-            print('failed')
+            return('failed')
     
     def addToShoppingList(self,product):
         self.shoppingList.append(product)
