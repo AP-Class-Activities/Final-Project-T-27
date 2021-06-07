@@ -1,0 +1,22 @@
+   
+    def addCustomer(self,customer):
+        self.customers.append(customer)
+    def addSeller(self,seller):
+        self.sellers.append(seller)
+    
+        
+
+    def sell(self,sellerIndex,productIndex,cutomerIndex):
+        print('req to operator ...')
+        isAllow=True
+      
+        productPrice =self.sellers[sellerIndex].productList[productIndex].price
+        Commission=self.sellers[sellerIndex].proceeds = (2/100 )*productPrice
+        print(Commission)
+    
+        timeToSend=self.sellers[sellerIndex].timeToSendProduct+self.customers[cutomerIndex].timeToReceiveProduct
+        print(timeToSend)
+
+       orderlistsofseller =self.sellers[sellerIndex].orderList.append(self.sellers[sellerIndex].productList[productIndex])
+        print(orderlistsofseller)
+        
