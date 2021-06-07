@@ -9,7 +9,7 @@ class Customer:
         self._name=name
         self._password=password
         self.distance=distance
-        self.timeToReceiveProduct=distance * 5 / 60
+        self.timeToReceiveProduct=((distance / 5)*10) / 60
         
     def get_name(self):
         return self._name
