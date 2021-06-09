@@ -1,0 +1,21 @@
+    def getStatus(self):
+        print('proceeds:{}'.format(self.proceeds))
+        print('profit:{}'.format(self.profit))
+        print('count of shopping:{}'.format(self.countShopping))
+        print('count of sellers:{}'.format(len(self.sellers)))
+        
+        for i in self.sellers:
+            print('name of seller:{} profit:{}',format(i.name,i.profit))
+        for i in self.customers:
+            print('name of customer:{} purchase amount:{}'.format(i.name,i.purchaseAmount))
+
+    def getIDCode(self,isCustomer):
+        if isCustomer:
+            id=randint(100000,1000000)
+            return 'CU'+str(id)
+        else:
+            id=randint(100000,1000000)
+            return 'SL'+str(id)
+
+    def makeDiscountCode(self,name,expirationTime,idCustomers,number,idProducts):
+        return DiscountCode(name,expirationTime,idCustomers,number,idProducts)    
