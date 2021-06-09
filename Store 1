@@ -1,0 +1,30 @@
+class Store:
+    customers = []
+    sellers = []
+    products = []
+    proceeds=0.0
+    profit=0.0
+    countShopping=0
+
+    def getSellerPoint(self,seller):
+        return seller.point
+    def getCustomerShopList(self,customer):
+        return len(customer.shoppingList)
+    def orderLists(self):
+        self.sellers.sort(key=self.getSellerPoint)
+        self.customers.sort(key=self.getCustomerShopList)
+    
+    def delCustomer(self, index):
+        self.customers.pop(index)
+        print('success')
+                
+        
+        
+    def delSeller(self, index):
+        self.sellers.pop(index)
+        print('success')
+
+
+    def delProduct(self, index):
+        self.products.pop(index)
+        print('success')
