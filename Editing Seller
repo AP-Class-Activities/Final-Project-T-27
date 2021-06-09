@@ -1,0 +1,57 @@
+class Seller:
+    productList = [Product('PR561123', 'banana', 5000.0, 15), Product('PR789654', 'potato', 5000.0, 10)]
+    orderList = []
+    countSelle = 0
+    proceeds = 0
+    expense = 0
+    profit = 0
+    isSuspend = False
+
+    def __init__(self, id, name, password, distance, point, wallet):
+        self.id = id
+        self._name = name
+        self._password = password
+        self.distance = distance
+        self.point = point
+        self.wallet = wallet
+        self.timeToSendProduct = distance / 5 * 10 / 60
+
+    def get_name(self):
+        return self._name
+
+    def set_name(self, newName):
+        self._name = newName
+
+    def get_password(self):
+        return self._password
+
+    def set_password(self, newPas):
+        self._password = newPas
+
+    name = property(get_name, set_name)
+    password = property(get_password, set_password)
+
+    def seeOrders(self):
+        for order in self.orderList:
+            print('id:{} name:{}  number:{} '
+                  .format(order.id, order.name, order.number))
+
+    def withdrawOfWallet(self, value):
+        self.wallet -= value
+
+    def decreasePoint(self):
+        self.point -= 1
+        if self.point <= -20:
+            self.isSuspend = True
+
+    def getStatus(self):
+        print(' countSelle:{} proceeds{} expense{} profit{} isSuspend{} '
+              .format(self.countSelle, self.proceeds, self.expense, self.profit, self.isSuspend))
+
+    def addProduct(self, product):
+        print('send req to operator...')
+        isAllow = True
+        if isAllow:
+            self.productList.append(product)
+        else:
+            print('failed')
