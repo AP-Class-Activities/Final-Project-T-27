@@ -68,7 +68,7 @@ class Ui_Form(object):
         self.verticalLayout.addWidget(self.status)
         window.setCentralWidget(Form)
         self.Form = Form
-
+        self.window=window
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
@@ -93,8 +93,9 @@ class Ui_Form(object):
 
 
     def goToSellPage(self):
+
         self.sellerPage1 = QtWidgets.QMainWindow()
-        self.ui = sellerPage()
+        self.ui = sellerPage.Ui_Form()
         self.ui.setupUi(self.sellerPage1)
         self.sellerPage1.show()
         self.window.close()
