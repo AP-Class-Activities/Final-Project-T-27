@@ -1,0 +1,122 @@
+
+
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+
+
+
+
+
+class Ui_Form(object):
+    def setupUi(self, window,username):
+
+        window.setObjectName("Form")
+        window.resize(400, 300)
+        Form = QtWidgets.QWidget(window)
+        Form.setObjectName("CentralWidget")
+        self.verticalLayout = QtWidgets.QVBoxLayout(Form)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.label = QtWidgets.QLabel(Form)
+        self.label.setMaximumSize(QtCore.QSize(16777215, 50))
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label.setFont(font)
+        self.label.setObjectName("label")
+        self.verticalLayout.addWidget(self.label)
+        self.gridLayout = QtWidgets.QGridLayout()
+        self.gridLayout.setObjectName("gridLayout")
+        self.pushButton = QtWidgets.QPushButton(Form)
+        self.pushButton.setObjectName("pushButton")
+        self.gridLayout.addWidget(self.pushButton, 0, 0, 1, 1)
+        self.pushButton.clicked.connect(self.mablagh1)
+        self.pushButton.clicked.connect(self.labelChange)
+        self.pushButton_4 = QtWidgets.QPushButton(Form)
+        self.pushButton_4.setObjectName("pushButton_4")
+        self.gridLayout.addWidget(self.pushButton_4, 3, 0, 1, 1)
+        self.pushButton_4.clicked.connect(self.mablagh4)
+        self.pushButton_4.clicked.connect(self.labelChange4)
+        self.pushButton_3 = QtWidgets.QPushButton(Form)
+        self.pushButton_3.setObjectName("pushButton_3")
+        self.gridLayout.addWidget(self.pushButton_3, 2, 0, 1, 1)
+        self.pushButton_3.clicked.connect(self.mablagh3)
+        self.pushButton_3.clicked.connect(self.labelChange3)
+        self.pushButton_2 = QtWidgets.QPushButton(Form)
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.gridLayout.addWidget(self.pushButton_2, 1, 0, 1, 1)
+        self.pushButton_2.clicked.connect(self.mablagh2)
+        self.pushButton_2.clicked.connect(self.labelChange2)
+        self.verticalLayout.addLayout(self.gridLayout)
+        self.label_2 = QtWidgets.QLabel(Form)
+        self.label_2.setText("")
+        self.label_2.setObjectName("label_2")
+        self.verticalLayout.addWidget(self.label_2)
+        window.setCentralWidget(Form)
+        self.username=username
+        self.retranslateUi(Form)
+        QtCore.QMetaObject.connectSlotsByName(Form)
+
+
+    def mablagh1(self):
+        charge = 100000
+        charges = open("mabalegh.txt","a")
+        charges.write("\n" + self.username + " " + str(charge))
+        #print(self.username + " " + str(charge))
+
+
+    def mablagh2(self):
+        charge = 200000
+        charges = open("mabalegh.txt", "a")
+        charges.write("\n" + self.username + " " + str(charge))
+
+
+    def mablagh3(self):
+        charge = 500000
+        charges = open("mabalegh.txt", "a")
+        charges.write("\n" + self.username + " " + str(charge))
+
+    def mablagh4(self):
+        charge = 1000000
+        charges = open("mabalegh.txt", "a")
+        charges.write("\n" + self.username + " " + str(charge))
+
+    def labelChange(self):
+        self.label_2.setText('مبلغ {} به حساب شما اضافه شد'.format(self.pushButton.text()))
+
+    def labelChange2(self):
+        self.label_2.setText('مبلغ {} به حساب شما اضافه شد'.format(self.pushButton_2.text()))
+
+    def labelChange3(self):
+        self.label_2.setText('مبلغ {} به حساب شما اضافه شد'.format(self.pushButton_3.text()))
+
+    def labelChange4(self):
+        self.label_2.setText('مبلغ {} به حساب شما اضافه شد'.format(self.pushButton_4.text()))
+
+
+
+
+
+
+
+
+
+    def retranslateUi(self, Form):
+        _translate = QtCore.QCoreApplication.translate
+        Form.setWindowTitle(_translate("Form", "شارژ حساب"))
+        self.label.setText(_translate("Form", "لطفا مبلغ مورد نیاز جهت شارژ را انتخاب کنید."))
+        self.pushButton.setText(_translate("Form", "100000 تومان"))
+        self.pushButton_2.setText(_translate("Form", "200000 تومان"))
+        self.pushButton_3.setText(_translate("Form", "500000 تومان"))
+        self.pushButton_4.setText(_translate("Form", "1000000 تومان"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Form = QtWidgets.QMainWindow()
+    ui = Ui_Form()
+    ui.setupUi(Form," ")
+    Form.show()
+    sys.exit(app.exec_())
