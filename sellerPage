@@ -1,0 +1,109 @@
+
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+
+class Ui_Form(object):
+    def setupUi(self, window):
+        window.setObjectName("Form")
+        window.resize(588, 557)
+        Form = QtWidgets.QWidget(window)
+        Form.setObjectName("CentralWidget")
+        self.label = QtWidgets.QLabel(Form)
+        self.label.setGeometry(QtCore.QRect(6, 10, 571, 31))
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label.setFont(font)
+        self.label.setObjectName("label")
+        self.label_3 = QtWidgets.QLabel(Form)
+        self.label_3.setGeometry(QtCore.QRect(10, 90, 171, 111))
+        self.label_3.setText("")
+        self.label_3.setPixmap(QtGui.QPixmap("موز2.png"))
+        self.label_3.setObjectName("label_3")
+        self.label_4 = QtWidgets.QLabel(Form)
+        self.label_4.setGeometry(QtCore.QRect(220, 90, 151, 111))
+        self.label_4.setText("")
+        self.label_4.setPixmap(QtGui.QPixmap("توت-فرنگی.png"))
+        self.label_4.setObjectName("label_4")
+        self.label_5 = QtWidgets.QLabel(Form)
+        self.label_5.setGeometry(QtCore.QRect(410, 90, 161, 111))
+        self.label_5.setText("")
+        self.label_5.setPixmap(QtGui.QPixmap("111.png"))
+        self.label_5.setObjectName("label_5")
+        self.pushButton = QtWidgets.QPushButton(Form)
+        self.pushButton.setGeometry(QtCore.QRect(10, 212, 171, 31))
+        self.pushButton.setStyleSheet("border-color: rgb(255, 170, 0);\n"
+"alternate-background-color: rgb(255, 170, 0);")
+        self.pushButton.setObjectName("pushButton")
+        self.pushButton_2 = QtWidgets.QPushButton(Form)
+        self.pushButton_2.setGeometry(QtCore.QRect(220, 210, 151, 31))
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.pushButton_3 = QtWidgets.QPushButton(Form)
+        self.pushButton_3.setGeometry(QtCore.QRect(410, 210, 161, 31))
+        self.pushButton_3.setObjectName("pushButton_3")
+        self.label_2 = QtWidgets.QLabel(Form)
+        self.label_2.setGeometry(QtCore.QRect(10, 300, 191, 141))
+        self.label_2.setText("")
+        self.label_2.setPixmap(QtGui.QPixmap("11.png"))
+        self.label_2.setObjectName("label_2")
+        self.label_6 = QtWidgets.QLabel(Form)
+        self.label_6.setGeometry(QtCore.QRect(210, 300, 181, 141))
+        self.label_6.setText("")
+        self.label_6.setPixmap(QtGui.QPixmap("1.png"))
+        self.label_6.setObjectName("label_6")
+        self.label_7 = QtWidgets.QLabel(Form)
+        self.label_7.setGeometry(QtCore.QRect(400, 300, 181, 141))
+        self.label_7.setText("")
+        self.label_7.setPixmap(QtGui.QPixmap("2.png"))
+        self.label_7.setObjectName("label_7")
+        self.pushButton_4 = QtWidgets.QPushButton(Form)
+        self.pushButton_4.setGeometry(QtCore.QRect(10, 450, 191, 31))
+        self.pushButton_4.setObjectName("pushButton_4")
+        self.pushButton_5 = QtWidgets.QPushButton(Form)
+        self.pushButton_5.setGeometry(QtCore.QRect(210, 450, 181, 31))
+        self.pushButton_5.setObjectName("pushButton_5")
+        self.pushButton_6 = QtWidgets.QPushButton(Form)
+        self.pushButton_6.setGeometry(QtCore.QRect(400, 450, 181, 31))
+        self.pushButton_6.setObjectName("pushButton_6")
+        self.pushButton_7 = QtWidgets.QPushButton(Form)
+        self.pushButton_7.setGeometry(QtCore.QRect(230, 510, 131, 31))
+        self.pushButton_7.setStyleSheet("background-color: rgb(85, 255, 127);\n"
+"border-color: rgb(0, 170, 0);\n"
+"border-top-color: rgb(0, 170, 0);\n"
+"border-left-color: rgb(0, 170, 0);\n"
+"border-bottom-color: rgb(0, 170, 0);")
+        self.pushButton_7.setObjectName("pushButton_7")
+        window.setCentralWidget(Form)
+        self.Form = Form
+
+        self.retranslateUi(Form)
+        QtCore.QMetaObject.connectSlotsByName(Form)
+
+    def retranslateUi(self, Form):
+        _translate = QtCore.QCoreApplication.translate
+        Form.setWindowTitle(_translate("Form", "Form"))
+        self.label.setText(_translate("Form", "شما به عنوان فرشنده  وارد شدید، برای شروع حداقل 3 محصول خریداری کنید."))
+        self.pushButton.setText(_translate("Form", "اضافه کردن به لیست فروش"))
+        self.pushButton_2.setText(_translate("Form", "اضافه کردن به لیست فروش"))
+        self.pushButton_3.setText(_translate("Form", "اضافه کردن به لیست فروش"))
+        self.pushButton_4.setText(_translate("Form", "اضافه کردن به لیست فروش"))
+        self.pushButton_5.setText(_translate("Form", "اضافه کردن به لیست فروش"))
+        self.pushButton_6.setText(_translate("Form", "اضافه کردن به لیست فروش"))
+        self.pushButton_7.setWhatsThis(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.pushButton_7.setText(_translate("Form", "تایید و رفتن به صفحه بعد"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Form = QtWidgets.QMainWindow()
+    ui = Ui_Form()
+    ui.setupUi(Form)
+    Form.show()
+    sys.exit(app.exec_())
