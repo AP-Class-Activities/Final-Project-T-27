@@ -1,0 +1,93 @@
+
+
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+import storeForCustomer
+
+
+class Ui_Form(object):
+    def setupUi(self, window):
+        window.setObjectName("Form")
+        window.resize(509, 336)
+        Form= QtWidgets.QWidget(window)
+        Form.setObjectName("CentralWidget")
+        self.verticalLayout = QtWidgets.QVBoxLayout(Form)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.label = QtWidgets.QLabel(Form)
+        self.label.setMinimumSize(QtCore.QSize(0, 0))
+        self.label.setMaximumSize(QtCore.QSize(16777215, 50))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(18)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label.setFont(font)
+        self.label.setAlignment(QtCore.Qt.AlignCenter)
+        self.label.setObjectName("label")
+        self.verticalLayout.addWidget(self.label)
+        self.gridLayout = QtWidgets.QGridLayout()
+        self.gridLayout.setObjectName("gridLayout")
+        self.label_2 = QtWidgets.QLabel(Form)
+        self.label_2.setObjectName("label_2")
+        self.gridLayout.addWidget(self.label_2, 0, 1, 1, 1)
+        self.label_3 = QtWidgets.QLabel(Form)
+        self.label_3.setObjectName("label_3")
+        self.gridLayout.addWidget(self.label_3, 1, 1, 1, 1)
+        self.UserLine = QtWidgets.QLineEdit(Form)
+        self.UserLine.setObjectName("UserLine")
+        self.gridLayout.addWidget(self.UserLine, 1, 0, 1, 1)
+        self.label_4 = QtWidgets.QLabel(Form)
+        self.label_4.setObjectName("label_4")
+        self.gridLayout.addWidget(self.label_4, 2, 1, 1, 1)
+        self.PassLine = QtWidgets.QLineEdit(Form)
+        self.PassLine.setText("")
+        self.PassLine.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.PassLine.setObjectName("PassLine")
+        self.gridLayout.addWidget(self.PassLine, 2, 0, 1, 1)
+        self.UserLine = QtWidgets.QLineEdit(Form)
+        self.UserLine.setObjectName("UserLine")
+        self.gridLayout.addWidget(self.UserLine, 0, 0, 1, 1)
+        self.verticalLayout.addLayout(self.gridLayout)
+        self.pushButton = QtWidgets.QPushButton(Form)
+        self.pushButton.setObjectName("pushButton")
+        self.pushButton.clicked.connect(self.SignUpAccount)
+        self.verticalLayout.addWidget(self.pushButton)
+        window.setCentralWidget(Form)
+
+        self.retranslateUi(Form)
+        QtCore.QMetaObject.connectSlotsByName(Form)
+
+
+    def goToStore(self):
+        self.storePage = QtWidgets.QMainWindow()
+        self.ui = storeForCustomer.Ui_Form()
+        self.ui.setupUi(self.storePage)
+        self.storePage.show()
+        Form.close()
+
+    def SignUpAccount(self):
+        name= self.UserLine.text()
+        username= self.UserLine.text()
+        password= self.PassLine.text()
+        users= open("database.txt","a")
+        users.write("\n"+name+""+username+""+password)
+        users.close()
+        self.goToStore()
+    def retranslateUi(self, Form):
+        _translate = QtCore.QCoreApplication.translate
+        Form.setWindowTitle(_translate("Form", "ثبت نام"))
+        self.label.setText(_translate("Form", "ثبت نام"))
+        self.label_2.setText(_translate("Form", "نام:"))
+        self.label_3.setText(_translate("Form", "نام کاربری:"))
+        self.label_4.setText(_translate("Form", "کلمه عبور:"))
+        self.pushButton.setText(_translate("Form", "ثبت نام"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Form = QtWidgets.QMainWindow()
+    ui = Ui_Form()
+    ui.setupUi(Form)
+    Form.show()
+    sys.exit(app.exec_())
