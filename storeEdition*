@@ -1,0 +1,53 @@
+
+
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+
+class Ui_Form(object):
+    def setupUi(self, window):
+        window.setObjectName("Form")
+        window.resize(400, 300)
+        Form = QtWidgets.QWidget(window)
+        Form.setObjectName("CentralWidget")
+        self.verticalLayout = QtWidgets.QVBoxLayout(Form)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.label = QtWidgets.QLabel(Form)
+        self.label.setMaximumSize(QtCore.QSize(16777215, 50))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label.setFont(font)
+        self.label.setObjectName("label")
+        self.verticalLayout.addWidget(self.label)
+        self.gridLayout = QtWidgets.QGridLayout()
+        self.gridLayout.setObjectName("gridLayout")
+        self.pushButton = QtWidgets.QPushButton(Form)
+        self.pushButton.setObjectName("pushButton")
+        self.gridLayout.addWidget(self.pushButton, 0, 0, 1, 1)
+        self.pushButton_2 = QtWidgets.QPushButton(Form)
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.gridLayout.addWidget(self.pushButton_2, 1, 0, 1, 1)
+        self.verticalLayout.addLayout(self.gridLayout)
+        window.setCentralWidget(Form)
+
+        self.retranslateUi(Form)
+        QtCore.QMetaObject.connectSlotsByName(Form)
+
+    def retranslateUi(self, Form):
+        _translate = QtCore.QCoreApplication.translate
+        Form.setWindowTitle(_translate("Form", "فروشگاه"))
+        self.label.setText(_translate("Form", "خوش آمدید. لطفا ابتدا برای خرید حساب خود را شارژ نمایید."))
+        self.pushButton.setText(_translate("Form", "شارژ حساب"))
+        self.pushButton_2.setText(_translate("Form", "خرید محصول"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Form = QtWidgets.QMainWindow()
+    ui = Ui_Form()
+    ui.setupUi(Form)
+    Form.show()
+    sys.exit(app.exec_())
