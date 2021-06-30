@@ -73,6 +73,7 @@ class Ui_Form(object):
         self.verticalLayout.addLayout(self.horizontalLayout)
         window.setCentralWidget(Form)
         self.Form=Form
+        self.window=window
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
